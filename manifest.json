@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Password Checker",
+  "version": "1.0.0",
+  "description": "A password security checker extension for Visual Studio Code.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+    },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["extension.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
